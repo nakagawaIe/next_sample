@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import type { NextPage } from 'next'
-import { CounterContainer } from '../features/counter/counter_container'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { CounterContainer } from '@/features/counter/counter_container';
 
 const CounterPage: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const CounterPage: NextPage = () => {
       </Head>
       <CounterContainer />
     </>
-  )
-}
+  );
+};
 
-export default CounterPage
+export default CounterPage;

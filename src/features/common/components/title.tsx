@@ -1,11 +1,9 @@
-import style from './title.module.scss'
+import style from './title.module.scss';
 
 type Props = {
-  title: string
-}
+  title: string;
+};
 
 export const Title = (props: Props) => {
-  return (
-    <h1 className={style.title}>{props.title}</h1>
-  )
-}
+  return <h1 className={style.title}>{props.title}</h1>;
+};

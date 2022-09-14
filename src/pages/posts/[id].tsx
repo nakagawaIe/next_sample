@@ -7,12 +7,12 @@ const PostPage = () => {
 
   return (
     <>
-      <h1>ID: { id } Post</h1>
+      <h1>ID: {id} Post</h1>
       <h2>
-        <Link href="/">Back to home</Link>
+        <Link href='/'>Back to home</Link>
       </h2>
     </>
   );
-}
+};
 
-export default PostPage
+export default PostPage;

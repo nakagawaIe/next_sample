@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import type { NextPage } from 'next'
-import { TodoContainer } from '../features/todo/todo_container'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { TodoContainer } from '@/features/todo/todo_container';
 
 const TodoPage: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const TodoPage: NextPage = () => {
       </Head>
       <TodoContainer />
     </>
-  )
-}
+  );
+};
 
-export default TodoPage
+export default TodoPage;
