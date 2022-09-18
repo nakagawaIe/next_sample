@@ -1,11 +1,66 @@
 {
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
   "extends": [
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/warnings",
     "prettier"
   ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
+    "indent": ["error", 2],
+    "max-len": [
+      "error",
+      {
+        "code": 150
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "default-case": ["off"],
+    "consistent-return": ["off"],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+          "selector": "variable",
+          "format": ["camelCase", "PascalCase"],
+          "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
     "import/order": [
       "error",
       {

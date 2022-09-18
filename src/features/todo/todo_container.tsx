@@ -25,7 +25,7 @@ export const TodoContainer = () => {
   };
 
   const onChecked = (todo: typeof todos[0]) => {
-    const newTodos = todos.map((t) => {
+    const newTodos = todos.map(t => {
       if (t.id === todo.id) {
         t.isDone = !t.isDone;
       }
@@ -45,12 +45,12 @@ export const TodoContainer = () => {
       <Title title='ToDo Page' />
 
       <div>
-        <input type='text' value={text} onChange={(e) => setText(e.target.value)} />
+        <input type='text' value={text} onChange={e => setText(e.target.value)} />
         <button onClick={onSubmit}>追加</button>
       </div>
 
       <ul>
-        {todos.map((t) => (
+        {todos.map(t => (
           <li key={t.id}>
             <input type='checkbox' checked={t.isDone} onChange={() => onChecked(t)} />
             {t.id}: {t.text}
