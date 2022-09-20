@@ -20,7 +20,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <ul>
           <li>
-            <Link href='/posts/9999'>Post Page</Link>
+            <Link href='/posts'>Posts Page</Link>
+            <small>（useSWRを試す）</small>
           </li>
           <li>
             <Link href='/counter'>カウンター</Link>
