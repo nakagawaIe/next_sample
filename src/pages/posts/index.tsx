@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -22,7 +23,11 @@ const PostsPage: NextPage = () => {
   }
 
   return (
-    <>
+    <motion.div
+      initial={{ x: "10%" }}
+      animate={{ x: "0" }}
+      exit={{ opacity: 0 }}
+    >
       <Head>
         <title>Posts Page</title>
       </Head>
@@ -30,7 +35,7 @@ const PostsPage: NextPage = () => {
       <p>
         <Link href='/'>Back to Home</Link>
       </p>
-    </>
+    </motion.div>
   );
 };
 
