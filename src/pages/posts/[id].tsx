@@ -9,21 +9,21 @@ const PostPage = () => {
   const { data, error } = useSWR<IPost>(`https://jsonplaceholder.typicode.com/posts/${id}`);
 
   const contents = () => {
-    if (error) return <div>Failed to load</div>
-    if (!data) return <div>Loading...</div>
+    if (error) return <div>Failed to load</div>;
+    if (!data) return <div>Loading...</div>;
     return (
       <article>
         <h1>{data.title}</h1>
         <p>{data.body}</p>
       </article>
-    )
-  }
+    );
+  };
 
   return (
     <>
       {contents()}
       <p>
-        <Link href='/posts'>Back to List</Link>
+        <Link href='/posts'>＜ Back to List</Link>
       </p>
     </>
   );

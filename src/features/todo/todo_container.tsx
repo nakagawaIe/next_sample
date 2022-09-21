@@ -58,7 +58,7 @@ export const TodoContainer = () => {
         ))}
       </ul>
 
-      <Link href='/'>Back to home</Link>
+      <Link href='/'>＜ Back to home</Link>
     </div>
   );
 };

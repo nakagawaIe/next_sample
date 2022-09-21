@@ -3,11 +3,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
-import styles from '../features/common/styles/Home.module.scss';
+import styles from '../features/index/styles/index.module.scss';
 import { TodoContext } from '../features/todo/providers/todo_provider';
 
 const Home: NextPage = () => {
   const { state } = useContext(TodoContext);
+  const { todos } = state;
 
   return (
     <div className={styles.container}>
@@ -21,14 +22,19 @@ const Home: NextPage = () => {
         <ul>
           <li>
             <Link href='/posts'>Posts Page</Link>
-            <small>（useSWRを試す）</small>
+            <small>（useSWR、axiosを試す）</small>
           </li>
           <li>
             <Link href='/counter'>カウンター</Link>
             <small>（useStateを試す）</small>
           </li>
           <li>
-            <Link href='/todo'>{`ToDoリスト - ${state.todos.length}件あります`}</Link>
+            <Link href='/todo'>
+              {`ToDoリスト - ${todos.length}件中 未完了が${
+                todos.filter(t => !t.isDone).length
+              }件 あります`}
+            </Link>
+            <br />
             <small>（useContext, useReducerを試す）</small>
           </li>
         </ul>
