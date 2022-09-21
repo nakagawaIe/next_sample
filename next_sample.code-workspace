@@ -19,7 +19,8 @@
       "typescriptreact",
       "javascript",
       "javascriptreact"
-    ]
+    ],
+    "prettier.configPath": ".prettierrc"
   },
   "extensions": {
     "recommendations": [

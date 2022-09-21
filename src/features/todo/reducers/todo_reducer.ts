@@ -25,20 +25,20 @@ export const TodoReducer: React.Reducer<IState, ITodoAction> = (
   action: ITodoAction,
 ) => {
   switch (action.type) {
-  case ActionType.TODO_FETCH:
-    return {
-      loading: true,
-      todos: action.payload.todos,
-    };
-  case ActionType.TODO_FETCH_SUCCESS:
-    return {
-      ...state,
-      loading: false,
-    };
-  case ActionType.TODO_UPDATE:
-    return {
-      ...state,
-      todos: action.payload.todos,
-    };
+    case ActionType.TODO_FETCH:
+      return {
+        loading: true,
+        todos: action.payload.todos,
+      };
+    case ActionType.TODO_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+    case ActionType.TODO_UPDATE:
+      return {
+        ...state,
+        todos: action.payload.todos,
+      };
   }
 };
