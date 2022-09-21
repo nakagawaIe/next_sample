@@ -1,5 +1,4 @@
 import '../features/common/styles/globals.scss';
-import axios from 'axios';
 import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { SWRConfig } from 'swr';
@@ -9,7 +8,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <SWRConfig
       value={{
-        fetcher: (url: string) => axios(url).then(r => r.data),
+        fetcher: (url: string) => fetch(url).then(r => r.json()),
       }}
     >
       <TodoContextProvider>

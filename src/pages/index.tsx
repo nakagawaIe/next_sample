@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <ul>
           <li>
             <Link href='/posts'>Posts Page</Link>
-            <small>（useSWR、axiosを試す）</small>
+            <small>（useSWR、fetchを試す）</small>
           </li>
           <li>
             <Link href='/counter'>カウンター</Link>

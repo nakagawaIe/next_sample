@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { motion } from 'framer-motion';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -29,14 +28,19 @@ const PostsPage: NextPage = () => {
   };
 
   const onClick = async () => {
-    const response = await axios.post(postsURL, {
-      data: {
+    const response = await fetch(postsURL, {
+      method: 'post',
+      body: JSON.stringify({
         title,
         body,
         userId: 1,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    console.log(response);
+    const data = await response.json();
+    console.log(data);
 
     setTitle('');
     setBody('');
