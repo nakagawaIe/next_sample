@@ -25,7 +25,8 @@
   "extensions": {
     "recommendations": [
       "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode"
+      "esbenp.prettier-vscode",
+      "clinyong.vscode-css-modules"
     ]
   }
 }

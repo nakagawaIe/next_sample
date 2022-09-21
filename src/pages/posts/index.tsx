@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import useSWR from 'swr';
-import { IPost } from '@/features/posts/interface/posts_interface';
+import { IPost } from '@/features/posts/types/posts_type';
 
 const postsURL = 'https://jsonplaceholder.typicode.com/posts';
 

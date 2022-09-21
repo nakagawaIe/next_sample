@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
-import { IPost } from '@/features/posts/interface/posts_interface';
+import { IPost } from '@/features/posts/types/posts_type';
 
 const PostPage = () => {
   const router = useRouter();

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Title } from '@/features/common/components/title';
+import { Title } from '@/features/common/components/title_component';
 import style from '@/features/counter/counter_container.module.scss';
 
 export const CounterContainer = () => {

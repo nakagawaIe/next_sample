@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useContext } from 'react';
-import { Title } from '@/features/common/components/title';
+import { Title } from '@/features/common/components/title_component';
 import { TodoContext } from '@/features/todo/providers/todo_provider';
 import { ActionType } from '@/features/todo/reducers/todo_reducer';
 
