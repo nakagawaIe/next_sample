@@ -30,6 +30,7 @@
     "no-extra-semi": "error",
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",
+    "no-unused-vars": ["error"],
     "max-len": [
       "error",
       {

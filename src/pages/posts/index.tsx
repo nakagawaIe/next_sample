@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
-import type { NextPage } from 'next';
+import type { NextPageWithLayout } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import useSWR from 'swr';
+import { MainLayout } from '@/features/common/layouts/main_layout';
 import { IPost } from '@/features/posts/types/posts_type';
 
 const postsURL = 'https://jsonplaceholder.typicode.com/posts';
 
-const PostsPage: NextPage = () => {
+const PostsPage: NextPageWithLayout = () => {
   const { data, error } = useSWR<IPost[]>(postsURL);
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
@@ -72,5 +73,7 @@ const PostsPage: NextPage = () => {
     </motion.div>
   );
 };
+
+PostsPage.getLayout = page => <MainLayout>{page}</MainLayout>;
 
 export default PostsPage;

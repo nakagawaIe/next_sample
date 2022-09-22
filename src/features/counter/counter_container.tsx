@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Title } from '@/features/common/components/title_component';
-import style from '@/features/counter/counter_container.module.scss';
+import { SubTitleComponent } from '@/features/common/components/sub_title_component';
+import { TitleComponent } from '@/features/common/components/title_component';
+import styles from '@/features/counter/counter_container.module.scss';
 
 export const CounterContainer = () => {
   const [count, setCount] = useState(0);
@@ -13,22 +13,40 @@ export const CounterContainer = () => {
   };
 
   useEffect(() => {
-    console.log('CounterPage mount');
-    return () => console.log('CounterPage unmount');
-  }, []);
-
-  useEffect(() => {
     console.log('effect by count');
   }, [count]);
 
   return (
-    <div className={style.root}>
-      <Title title={`${count}回目のこんにちは！`} />
-      <main className={style.main}>
+    <div className={styles.root}>
+      <TitleComponent title='Counter Page' />
+
+      <div className={styles.count}>
+        <p>{`${count}回目のこんにちは！`}</p>
         <button onClick={onClick}>こんにちはする</button>
-        {isShow && <p className={style.done}>こんにちはしました！</p>}
-      </main>
-      <Link href='/'>Back to home</Link>
+        {isShow && <p className={styles.done}>こんにちはしました！</p>}
+      </div>
+
+      <div>
+        <SubTitleComponent title='useState' />
+        <ul>
+          <li>
+            シンプルなstate<br />
+            こんにちはした数をカウントする
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <SubTitleComponent title='useEffect' />
+        <ul>
+          <li>コンポーネントのマウント/アンマウントをフック</li>
+          <li>指定したstate/propsに変化があった時にフック</li>
+        </ul>
+        <p>
+          このページがマウント/アンマウントした時に、console.logを吐く<br />
+          ↑のカウントのstateが変化した時にconsole.logを吐く
+        </p>
+      </div>
     </div>
   );
 };

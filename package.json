@@ -8,7 +8,7 @@
     "build:export": "next build && next export",
     "start": "next start",
     "lint": "next lint --dir src",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "next lint --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{ts,tsx}'"
   },
   "dependencies": {

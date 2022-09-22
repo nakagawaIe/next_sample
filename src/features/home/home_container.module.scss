@@ -1,0 +1,9 @@
+.list {
+  margin-top: 60px;
+
+  li {
+    & + li {
+      margin-top: 60px;
+    }
+  }
+}

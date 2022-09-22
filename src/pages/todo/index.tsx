@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import type { NextPage } from 'next';
+import type { NextPageWithLayout } from 'next';
 import Head from 'next/head';
+import { MainLayout } from '@/features/common/layouts/main_layout';
 import { TodoContainer } from '@/features/todo/todo_container';
 
-const TodoPage: NextPage = () => {
+const TodoPage: NextPageWithLayout = () => {
   return (
     <motion.div initial={{ x: '10%' }} animate={{ x: '0' }} exit={{ opacity: 0 }}>
       <Head>
@@ -13,5 +14,7 @@ const TodoPage: NextPage = () => {
     </motion.div>
   );
 };
+
+TodoPage.getLayout = page => <MainLayout>{page}</MainLayout>;
 
 export default TodoPage;

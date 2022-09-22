@@ -4,6 +4,6 @@ type Props = {
   title: string;
 };
 
-export const Title = (props: Props) => {
-  return <h1 className={style.title}>{props.title}</h1>;
+export const TitleComponent = (props: Props) => {
+  return <h2 className={style.root}>{props.title}</h2>;
 };

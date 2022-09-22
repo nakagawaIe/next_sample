@@ -1,10 +1,16 @@
 import '../features/common/styles/globals.scss';
 import { AnimatePresence } from 'framer-motion';
+import type { NextPageWithLayout } from 'next';
 import type { AppProps } from 'next/app';
 import { SWRConfig } from 'swr';
 import { TodoContextProvider } from '@/features/todo/providers/todo_provider';
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+}
+
+function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || (page => page);
   return (
     <SWRConfig
       value={{
@@ -13,7 +19,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     >
       <TodoContextProvider>
         <AnimatePresence exitBeforeEnter>
-          <Component key={router.asPath} {...pageProps} />
+          {getLayout(<Component key={router.asPath} {...pageProps} />)}
         </AnimatePresence>
       </TodoContextProvider>
     </SWRConfig>

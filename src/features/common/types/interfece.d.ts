@@ -1,4 +1,10 @@
-/** アクションごとに必要な追加のプロパティ群から、アクションの形式に整形する */
-type ActionTypeCreator<T> = {
-  [P in keyof T]: { type: P } & T[P];
-}[keyof T];
+import type { NextPage } from 'next';
+import type { ReactElement, ReactNode } from 'react';
+
+declare module 'next' {
+  /** https://nextjs.org/docs/basic-features/layouts */
+  // eslint-disable-next-line no-unused-vars
+  type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+    getLayout?: (page: ReactElement) => ReactNode
+  }
+}
