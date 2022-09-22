@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import { APIUtil } from '@/features/common/utils/api';
 import { IPost } from '@/features/posts/types/posts_type';
 
 const PostPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data, error } = useSWR<IPost>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const { data, error } = APIUtil.get<IPost>(id ? `https://jsonplaceholder.typicode.com/posts/${id}` : undefined);
 
   const contents = () => {
     if (error) return <div>Failed to load</div>;
@@ -21,10 +21,10 @@ const PostPage = () => {
 
   return (
     <>
-      {contents()}
       <p>
         <Link href='/posts'>＜ Back to List</Link>
       </p>
+      {contents()}
     </>
   );
 };
