@@ -7,7 +7,7 @@ const UnuseLayoutPage: NextPage = () => (
     <Head>
       <title>Unuse Layout Page</title>
     </Head>
-    <p>Layoutを使わないと、Layoutが再レンダリングされます。</p>
+    <p>Layout機構を使わないと、Layoutが再レンダリングされます。（stateがリセットされている）</p>
   </MainLayout>
 );
 

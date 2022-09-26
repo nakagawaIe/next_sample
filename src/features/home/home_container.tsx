@@ -12,15 +12,15 @@ export const HomeContainer = () => {
     <main className={styles.root}>
       <ul className={styles.list}>
         <li>
-          <SubTitleComponent title='Layoutを使わないと' />
+          <SubTitleComponent title='Layout機構を使わないと' />
           <Link href='/unuse_layout'>Unuse Layout Page ＞</Link>
         </li>
         <li>
-          <SubTitleComponent title='useState、useEffectを試す' />
+          <SubTitleComponent title='useState、useEffect、useMemoを試す' />
           <Link href='/counter'>Counter Page ＞</Link>
         </li>
         <li>
-          <SubTitleComponent title='useContext, useReducerを試す' />
+          <SubTitleComponent title='useContext、useReducerを試す' />
           <p>
             {`${todos.length}件中 未完了が${todos.filter(t => !t.isDone).length}件 あります`}
           </p>
