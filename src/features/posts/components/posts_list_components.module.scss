@@ -1,0 +1,7 @@
+.root {
+  li {
+    & + li {
+      margin-top: 8px;
+    }
+  }
+}

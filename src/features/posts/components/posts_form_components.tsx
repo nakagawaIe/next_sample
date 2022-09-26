@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './posts_form_components.module.scss';
 
 interface IProps {
   onClick: (title: string, body: string) => void;
@@ -15,16 +16,18 @@ export const PostsFormComponent = (props: IProps) => {
   };
 
   return (
-    <div>
-      <p>
-        Title
+    <div className={styles.root}>
+      <div className={styles.row}>
+        <p>Title</p>
         <input type='text' value={title} onChange={e => setTitle(e.target.value)} />
-      </p>
-      <p>
-        Body
+      </div>
+      <div className={styles.row}>
+        <p>Body</p>
         <textarea value={body} onChange={e => setBody(e.target.value)} rows={3} />
-      </p>
-      <button onClick={onClick}>Create Post (check console.log)</button>
+      </div>
+      <div className={styles.row}>
+        <button onClick={onClick}>Create Post (Check Console & Network)</button>
+      </div>
     </div>
   );
 };

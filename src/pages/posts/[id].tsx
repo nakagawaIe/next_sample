@@ -1,32 +1,16 @@
-import Link from 'next/link';
+import type { NextPageWithLayout } from 'next';
 import { useRouter } from 'next/router';
-import { APIUtil } from '@/features/common/utils/api';
-import { IPost } from '@/features/posts/types/posts_type';
+import { MainLayout } from '@/features/common/layouts/main_layout';
+import { PostDetailContainer } from '@/features/posts/post_detail_container';
 
-const PostPage = () => {
+const PostDetailPage: NextPageWithLayout = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data, error } = APIUtil.get<IPost>(id ? `https://jsonplaceholder.typicode.com/posts/${id}` : undefined);
+  if (!router.isReady || !id) return null;
 
-  const contents = () => {
-    if (error) return <div>Failed to load</div>;
-    if (!data) return <div>Loading...</div>;
-    return (
-      <article>
-        <h1>{data.title}</h1>
-        <p>{data.body}</p>
-      </article>
-    );
-  };
-
-  return (
-    <>
-      <p>
-        <Link href='/posts'>＜ Back to List</Link>
-      </p>
-      {contents()}
-    </>
-  );
+  return !isNaN(+id) ? <PostDetailContainer id={+id} /> : null;
 };
 
-export default PostPage;
+PostDetailPage.getLayout = page => <MainLayout>{page}</MainLayout>;
+
+export default PostDetailPage;
