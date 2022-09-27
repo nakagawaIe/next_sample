@@ -23,9 +23,10 @@
   ],
   "rules": {
     "indent": "off",
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 }],
     "semi": ["error", "always"],
-    "semi-spacing": ["error", {"after": true, "before": false}],
+    "semi-spacing": ["error", { "after": true, "before": false }],
     "semi-style": ["error", "last"],
     "no-extra-semi": "error",
     "no-unexpected-multiline": "error",
@@ -40,25 +41,19 @@
     "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [
-          ".jsx",
-          ".tsx"
-        ]
+        "extensions": [".jsx", ".tsx"]
       }
     ],
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
+    "arrow-parens": ["error", "as-needed"],
     "default-case": ["off"],
     "consistent-return": ["off"],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
-          "selector": "variable",
-          "format": ["camelCase", "PascalCase"],
-          "leadingUnderscore": "allow"
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase"],
+        "leadingUnderscore": "allow"
       },
       {
         "selector": "interface",
