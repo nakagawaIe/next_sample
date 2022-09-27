@@ -21,14 +21,18 @@ export const HomeContainer = () => {
         </li>
         <li>
           <SubTitleComponent title='useContext、useReducerを試す' />
-          <p>
-            {`${todos.length}件中 未完了が${todos.filter(t => !t.isDone).length}件 あります`}
-          </p>
+          <p>{`${todos.length}件中 未完了が${todos.filter(t => !t.isDone).length}件 あります`}</p>
           <Link href='/todo'>ToDo List Page ＞</Link>
         </li>
         <li>
           <SubTitleComponent title='useSWR、fetchを試す' />
           <Link href='/posts'>Posts Page ＞</Link>
+        </li>
+        <li>
+          <SubTitleComponent title='モーダルを試す' />
+          <Link href='/users/1'>User Page (id: 1) ＞</Link>
+          <br />
+          <Link href='/users/2'>User Page (id: 2) ＞</Link>
         </li>
       </ul>
     </main>

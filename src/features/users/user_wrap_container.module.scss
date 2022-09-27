@@ -1,0 +1,23 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: 0 20px;
+  }
+}
+
+.contents {
+  position: relative;
+}
+
+.modal {
+  background-color: rgba(90, 88, 102, 0.8);
+  border-radius: 4px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
