@@ -3,10 +3,10 @@ import { useState } from 'react';
 import useSWR from 'swr';
 import { SubTitleComponent } from '@/features/common/components/sub_title_component';
 import { TitleComponent } from '@/features/common/components/title_component';
-import { fetcher, post } from '@/features/common/utils/api';
 import { PostsFormComponent } from '@/features/posts/components/posts_form_components';
 import { PostsListComponent } from '@/features/posts/components/posts_list_components';
 import { IPost } from '@/features/posts/types/posts_type';
+import { fetcher, post } from '@/utils/api';
 
 const postsURL = 'https://jsonplaceholder.typicode.com/posts';
 

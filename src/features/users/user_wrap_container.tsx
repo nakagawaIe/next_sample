@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { SubTitleComponent } from '../common/components/sub_title_component';
 import styles from './user_wrap_container.module.scss';
+import { SubTitleComponent } from '@/features/common/components/sub_title_component';
 import { PhotoContainer } from '@/features/photos/photos_container';
 import { TodoContainer } from '@/features/todo/todo_container';
 import { UserDetailContainer } from '@/features/users/user_detail_container';
+import { addQuery, deleteQuery } from '@/utils/url';
 
 export const UserWrapContainer = () => {
   const router = useRouter();
@@ -89,24 +90,4 @@ export const UserWrapContainer = () => {
       </div>
     </>
   );
-};
-
-const addQuery = (key: string, value: string) => {
-  const { search } = window.location;
-  const params = new URLSearchParams(search);
-  params.append(key, value);
-  replaceQuery(params);
-};
-
-const deleteQuery = (key: string) => {
-  const { search } = window.location;
-  const params = new URLSearchParams(search);
-  params.delete(key);
-  replaceQuery(params);
-};
-
-const replaceQuery = (params: URLSearchParams) => {
-  const { pathname } = window.location;
-  const query = params.toString();
-  window.history.replaceState(null, '', `${pathname}${query ? '?' : ''}${query}`);
 };

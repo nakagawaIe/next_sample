@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { SubTitleComponent } from '@/features/common/components/sub_title_component';
-import { fetcher } from '@/features/common/utils/api';
 import { IPost } from '@/features/posts/types/posts_type';
+import { fetcher } from '@/utils/api';
 
 interface IProps {
   id: number;
