@@ -40,45 +40,20 @@ export const UserWrapContainer = () => {
     deleteQuery('todo');
   };
 
-  const ModalItems = () => (
-    <>
-      <AnimatePresence>
-        {isShowPhoto && (
-          <motion.div
-            initial={{ y: '10%' }}
-            animate={{ y: '0' }}
-            exit={{ opacity: 0, y: '10%' }}
-            className={styles.modal}
-          >
-            <PhotoContainer />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {isShowTodo && (
-          <motion.div
-            initial={{ y: '10%' }}
-            animate={{ y: '0' }}
-            exit={{ opacity: 0, y: '10%' }}
-            className={styles.modal}
-          >
-            <TodoContainer />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+  const Buttons = () => (
+    <div className={styles.buttons}>
+      <button onClick={isShowPhoto ? onClosePhoto : onClickPhoto}>
+        {isShowPhoto ? 'Close' : 'Show Photo'}
+      </button>
+      <button onClick={isShowTodo ? onCloseTodo : onClickTodo}>
+        {isShowTodo ? 'Close' : 'Show Todo'}
+      </button>
+    </div>
   );
 
   return (
     <>
-      <div className={styles.buttons}>
-        <button onClick={isShowPhoto ? onClosePhoto : onClickPhoto}>
-          {isShowPhoto ? 'Close' : 'Show Photo'}
-        </button>
-        <button onClick={isShowTodo ? onCloseTodo : onClickTodo}>
-          {isShowTodo ? 'Close' : 'Show Todo'}
-        </button>
-      </div>
+      <Buttons />
       <div className={styles.contents}>
         {!id || isNaN(+id) ? null : <UserDetailContainer id={+id} />}
         <SubTitleComponent title='モーダル' />
@@ -87,7 +62,30 @@ export const UserWrapContainer = () => {
           query stringも同時に変更して、query
           stringがある状態でロードするとモーダルが最初から出ている状態になる
         </p>
-        <ModalItems />
+        <AnimatePresence>
+          {isShowPhoto && (
+            <motion.div
+              initial={{ y: '10%' }}
+              animate={{ y: '0' }}
+              exit={{ opacity: 0, y: '10%' }}
+              className={styles.modal}
+            >
+              <PhotoContainer />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {isShowTodo && (
+            <motion.div
+              initial={{ y: '10%' }}
+              animate={{ y: '0' }}
+              exit={{ opacity: 0, y: '10%' }}
+              className={styles.modal}
+            >
+              <TodoContainer />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );
