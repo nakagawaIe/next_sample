@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import useSWR from 'swr';
 import { TitleComponent } from '../common/components/title_component';
 import styles from './photos_container.module.scss';
-import { fetcher } from '@/features/common/utils/api';
+import { fetcher } from '@/utils/api';
 
 interface IPhoto {
   albumId: number;

@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import { TitleComponent } from '@/features/common/components/title_component';
-import { fetcher } from '@/features/common/utils/api';
+import { fetcher } from '@/utils/api';
 
 interface IUser {
   id: number;
