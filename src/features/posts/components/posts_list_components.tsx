@@ -4,13 +4,13 @@ import { IPost } from '@/features/posts/types/posts_type';
 
 interface IProps {
   data?: IPost[];
-  error: any;
+  error: Error;
 }
 
 export const PostsListComponent = (props: IProps) => {
   const { data, error } = props;
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
   return (
     <ul className={styles.root}>
